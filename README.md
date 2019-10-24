@@ -88,9 +88,9 @@ brew install abstractclassvalidator
 
 ## Integrate validator with Xcode
 
-Even though the validator can be invoked from the commandline, it is most convenient when it's directly integrated with the build system. Since the vast marjority of Swift applications use Xcode as the build system, we'll cover this here.
+Even though the validator can be invoked from the commandline, it is most convenient when it's directly integrated with the build system. Since the vast majority of Swift applications use Xcode as the build system, we'll cover this here.
 
-1. Download the latest valiordat binary, either manually from the [Releases page](https://github.com/uber/swift-abstract-class/releases), or using [Carthage](https://github.com/Carthage/Carthage) or [Homebrew](https://github.com/Homebrew/brew).
+1. Download the latest validator binary, either manually from the [Releases page](https://github.com/uber/swift-abstract-class/releases), or using [Carthage](https://github.com/Carthage/Carthage) or [Homebrew](https://github.com/Homebrew/brew).
 2. Add a "Run Script" phase in the application's executable target's "Build Phases" section. ![](Images/build_phases.jpg)
 3. Make sure the "Shell" value is `/bin/sh`.
 4. Add a shell script that invokes the validator in the script box. For example, with binary downloaded using Carthage: `export SOURCEKIT_LOGGING=0 && ../Carthage/Checkouts/swift-abstract-class/Validator/bin/abstractclassvalidator validate Sources/`.
